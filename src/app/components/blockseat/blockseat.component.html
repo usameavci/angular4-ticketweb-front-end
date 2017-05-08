@@ -1,0 +1,11 @@
+<table class="table table-bordered">
+    <tbody>
+        <tr *ngFor=" let rowSeatList of dataSeatList ">
+        <td *ngFor=" let seat of rowSeatList ">
+            <div class="seat {{ seat.style }}">
+                <div class="text">{{ seat.id }}</div>
+            </div>
+        </td>
+        </tr>
+    </tbody>
+</table>

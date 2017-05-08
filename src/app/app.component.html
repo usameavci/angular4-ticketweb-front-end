@@ -1,3 +1,55 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <div class="jumbotron">
+    <h1>{{ title }}</h1>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th colspan="3">{{ RowCount }} x {{ ColumnCount }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Koltuk Satır Sayısı</th>
+            <th width="1">:</th>
+            <td><input type="text" class="form-control" [(ngModel)]="RowCount"></td>
+          </tr>
+          <tr>
+            <th>Koltuk Sütun Sayısı</th>
+            <th width="1">:</th>
+            <td><input type="text" class="form-control" [(ngModel)]="ColumnCount"></td>
+          </tr>
+          <tr>
+            <td colspan="3" class="text-right">
+              <button class="btn btn-primary" (click)="DrawSeats()">Gönder</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-6">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th>Koltuk İşlem Tipi</th>
+            <th width="1">:</th>
+            <td>
+              <select name="seatInfoSelected" id="id_seatInfoSelected" class="form-control" [(ngModel)]="seatInfoSelected">
+              <option *ngFor="let item of seatInfoList" [ngValue]="item.id">{{ item.label }}</option>
+            </select>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" class="text-right">
+              <button class="btn btn-primary" (click)="saveSeat()">Kaydet</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <hr>
+  <blockseat [data]=SeatList></blockseat>
+</div>

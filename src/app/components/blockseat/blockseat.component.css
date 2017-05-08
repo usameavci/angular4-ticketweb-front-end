@@ -1,0 +1,33 @@
+.seat {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #EFEFEF;
+  margin: auto auto;
+}
+
+.seat.empty {
+  background-color: #83B271;
+  color: #FFF;
+}
+
+.seat.full {
+  background-color: #C84771;
+  color: #FFF;
+}
+
+.seat.disabled {
+  background-color: #DDDDDD;
+  color: #FFF;
+}
+
+.seat.vip {
+  background-color: #615DEC;
+  color: #FFF;
+}
+
+.seat .text {
+  text-align: center;
+  line-height: 50px;
+}
